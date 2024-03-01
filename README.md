@@ -1,73 +1,109 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+#  📋 Desafio Back-end CRUD
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+### Descrição 
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas e os usuários que as utilizam. Ele oferece operações básicas de criação, leitura, atualização e exclusão para ambas as entidades: Tool e User.
 
-## Description
+### Proposta
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- A aplicação deve ser construída utilizando NodeJS, TypeScript, banco de dados, libraries e ferramentas de sua preferência.
+- Utilização de orientação objeto (Injeção de depêndencia, polimorfismo e etc) e os conceitos de SOLID
+- Autenticação e autorização (OAuth, JWT).
+- Testes Unitários.
+- Criar tratamentos de erros mais utilizadas (pelo menos 400 bad request na criação e 500 como erro default)
+- Não podem haver duas tools com o mesmo título, independente do case sensitive.
+- Uma tools pode ter no mínimo 0 tags e no máximo 8
+- A descrição de uma tools pode ter no máximo 256 caracteres.
+- A API deve responder na porta 3000.
+- Deve haver uma rota para listar todas as ferramentas cadastradas.
+```
+  {
+    id: 1,
+    title: "Notion",
+    link: "https://notion.so",
+    description: "All in one tool to organize teams and ideas. Write, plan, collaborate, and get organized. ",
+    tags: [
+      "organization",
+      "planning",
+      "collaboration",
+      "writing",
+      "calendar"
+    ]
+  }
+```
+- Deve haver uma rota para cadastrar uma nova ferramenta.
+- O usuário deve poder remover uma ferramenta por ID.
+- Deve haver uma rota para pesquisar um valor por todos os campos da tabela
+  
+   Exemplo: esta rota é uma pesquisa. Deve pegar valor e busca-lo por todos os campos da tabela, caso encontre deve ser retornado
+o valor daquela tabela.
+  
 
-## Installation
+
+### Funcionalidades
+- Tool Management:
+  
+  * Adicionar novas ferramentas ao sistema.
+  
+  * Visualizar todas as ferramentas cadastradas.
+  
+  * Atualizar informações das ferramentas existentes.
+
+  * Excluir ferramentas do sistema.
+
+- User Management:
+  
+  * Adicionar novos usuários ao sistema.
+  
+  * Visualizar todos os usuários cadastrados.
+  
+  * Atualizar informações dos usuários existentes.
+  
+  * Excluir usuários do sistema.
+
+    
+### Tecnologias Utilizadas
+- Linguagem: Javascript / Typescript
+- Framework: NestJS
+- Banco de Dados: MongoDB
+
+### Status do Projeto
+
+  🚀 Em produção
+
+### Features
+
+- [x] Criar o projeto NestJS. 
+- [ ] Criar o Crud de User
+- [ ] Criar o Crud de Tool
+- [ ] Estabelecer as regras de negócio da aplicação
+- [ ] Configuração do Banco de Dados
+- [ ] Aplicar os conceitos SOLID como inversão de dependência e responsabilidade única.
+- [ ] Criado a autenticação do projeto com JWT.
+- [ ] Criado os testes do projeto
+- [ ] Criar tratamento de erro.
+
+### Pré-requisitos e como rodar a aplicação
+- Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+ [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [NestJS](https://docs.nestjs.com/first-steps). 
+ Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+### 🎲 Rodando o projeto
 
 ```bash
+# Clone este repositório
+$ git clone <https://github.com/daniel2dfla/desafio-backend.git>
+
+# Instale as dependências
 $ npm install
-```
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
+# Execute a aplicação em modo de desenvolvimento
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+### ✌🏽 Contribuição
 
-```bash
-# unit tests
-$ npm run test
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+### 📩 Contato
+Para mais informaçãoes me deixo a disposição pelo email: daniel_2dfla@hotmail.com
