@@ -2,7 +2,7 @@
 
 ### Descrição 
 
-O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas e os usuários que as utilizam. Ele oferece operações básicas de criação, leitura, atualização e exclusão para ambas as entidades: Tool e User.
+O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas e os usuários para autenticação. Ele oferece operações básicas de criação, leitura, atualização e exclusão para ambas as entidades: Tool e User.
 
 ### Proposta
 
@@ -16,6 +16,7 @@ O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas 
 - A descrição de uma tools pode ter no máximo 256 caracteres.
 - A API deve responder na porta 3000.
 - Deve haver uma rota para listar todas as ferramentas cadastradas.
+- Uma vez que o usuário está autenticado, ele pode ter acesso a todas as ferramentas.
 ```
   {
     id: 1,
@@ -74,7 +75,7 @@ o valor daquela tabela.
 ### Features
 
 - [x] Criar o projeto NestJS. 
-- [ ] Criar o Crud de User
+- [x] Criar o Crud de User
 - [ ] Criar o Crud de Tool
 - [ ] Estabelecer as regras de negócio da aplicação
 - [ ] Configuração do Banco de Dados
