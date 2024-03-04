@@ -3,7 +3,7 @@ import { UserController } from './user.controller';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PostUserSchema } from './schemas/user.schema';
-import { IUserRepository } from 'src/abstractions/user/iuser-repository';
+import { IUserRepository } from 'src/abstractions/class/iuser-repository';
 import { MongoUserRepository } from 'src/abstractions/database/user-repository';
 
 @Module({
