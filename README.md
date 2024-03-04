@@ -76,9 +76,9 @@ o valor daquela tabela.
 
 - [x] Criar o projeto NestJS. 
 - [x] Criar o Crud de User
-- [ ] Criar o Crud de Tool
-- [ ] Estabelecer as regras de negócio da aplicação
-- [ ] Configuração do Banco de Dados
+- [x] Criar o Crud de Tool
+- [x] Estabelecer as regras de negócio da aplicação
+- [x] Configuração do Banco de Dados
 - [ ] Aplicar os conceitos SOLID como inversão de dependência e responsabilidade única.
 - [ ] Criado a autenticação do projeto com JWT.
 - [ ] Criado os testes do projeto

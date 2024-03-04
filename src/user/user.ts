@@ -5,3 +5,8 @@ export class User extends Document{
     email: string;
     password: string;
 }
+
+export type Users = {
+    name: string;
+    email: string;
+}
