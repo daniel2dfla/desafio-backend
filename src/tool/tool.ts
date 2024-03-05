@@ -1,6 +1,7 @@
 import { Document } from "mongoose";
 
 export class ToolInMongo extends Document {
+    id: string;
     title: string;
     link: string;
     description: string;
@@ -8,6 +9,7 @@ export class ToolInMongo extends Document {
 }
 
 export type Tool = {
+    id: string;
     title: string;
     link: string;
     description: string;

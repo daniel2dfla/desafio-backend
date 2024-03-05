@@ -37,4 +37,9 @@ export class ToolController {
         return this.toolService.delete(id);
     }
 
+    @Delete()
+    async deleteAll() {
+        return this.toolService.deleteAll();
+    }
+
 }

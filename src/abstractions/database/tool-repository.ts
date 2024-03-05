@@ -14,7 +14,7 @@ export class MongoToolRepository implements IToolRepository {
         return this.toolModel.find().exec();
     }
 
-    async findByWord(word: string): Promise<Tool[]>{
+    async findByWord() {
         return this.toolModel.find().exec();
     }
    
@@ -38,5 +38,9 @@ export class MongoToolRepository implements IToolRepository {
 
     async delete(id: string) {
         await this.toolModel.deleteOne({_id: id}).exec();
+    }
+
+    async deleteAll() {
+        await this.toolModel.deleteMany().exec();
     }
 }
