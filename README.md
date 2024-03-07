@@ -2,7 +2,7 @@
 
 ### Descrição 
 
-O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas e os usuários para autenticação. Ele oferece operações básicas de criação, leitura, atualização e exclusão para ambas as entidades: Tool e User.
+O objetivo deste projeto é fornecer uma aplicação para gerenciar ferramentas . Ele oferece operações básicas de criação, leitura, atualização e exclusão para a entidade Tool.
 
 ### Proposta
 
@@ -42,7 +42,7 @@ o valor daquela tabela.
 
 
 ### Funcionalidades
-- Tool Management:
+- Tool:
   
   * Adicionar novas ferramentas ao sistema.
   
@@ -52,15 +52,6 @@ o valor daquela tabela.
 
   * Excluir ferramentas do sistema.
 
-- User Management:
-  
-  * Adicionar novos usuários ao sistema.
-  
-  * Visualizar todos os usuários cadastrados.
-  
-  * Atualizar informações dos usuários existentes.
-  
-  * Excluir usuários do sistema.
 
     
 ### Tecnologias Utilizadas
@@ -75,12 +66,11 @@ o valor daquela tabela.
 ### Features
 
 - [x] Criar o projeto NestJS. 
-- [x] Criar o Crud de User
 - [x] Criar o Crud de Tool
 - [x] Estabelecer as regras de negócio da aplicação
 - [x] Configuração do Banco de Dados
-- [ ] Aplicar os conceitos SOLID como inversão de dependência e responsabilidade única.
-- [ ] Criado a autenticação do projeto com JWT.
+- [x] Aplicar os conceitos SOLID como inversão de dependência e responsabilidade única.
+- [x] Criado a autenticação do projeto com JWT.
 - [ ] Criado os testes do projeto
 - [ ] Criar tratamento de erro.
 
