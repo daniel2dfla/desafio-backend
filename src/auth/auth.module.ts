@@ -6,7 +6,7 @@ import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 
 import { AuthService } from './auth.service';
-import { AuthUserSchema } from './schemas/user.schema';
+import { AuthUserSchema } from '../abstractions/schemas/user.schema';
 import { JwtStrategy } from './jwt.strategy';
 import { MongoUserRepository } from 'src/abstractions/database/user-repository';
 import { IUserRepository } from 'src/abstractions/class/iuser-repository';

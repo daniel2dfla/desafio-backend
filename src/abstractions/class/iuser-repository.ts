@@ -1,7 +1,7 @@
 import { DeleteDto } from "src/auth/dto/delete-dto";
 import { LoginDto } from "src/auth/dto/login.dto";
 import { SignupDto } from "src/auth/dto/signup.dto";
-import { User } from "src/auth/schemas/user.schema";
+import { User } from "src/abstractions/schemas/user.schema";
 
 
 export abstract class IUserRepository {
