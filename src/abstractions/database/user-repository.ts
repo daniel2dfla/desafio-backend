@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IUserRepository } from '../class/iuser-repository';
-import { User } from 'src/auth/schemas/user.schema';
+import { User } from 'src/abstractions/schemas/user.schema';
 import { SignupDto } from 'src/auth/dto/signup.dto';
 import { LoginDto } from 'src/auth/dto/login.dto';
 import { DeleteDto } from 'src/auth/dto/delete-dto';
