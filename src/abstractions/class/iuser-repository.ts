@@ -1,10 +1,13 @@
-import { Users } from 'src/user/user';
+import { DeleteDto } from "src/auth/dto/delete-dto";
+import { LoginDto } from "src/auth/dto/login.dto";
+import { SignupDto } from "src/auth/dto/signup.dto";
+import { User } from "src/auth/schemas/user.schema";
+
 
 export abstract class IUserRepository {
-    abstract getAll(): Promise<Users[]> 
-    abstract getById(id: string): Promise<Users>
-    abstract create(user: Users): Promise<Users>
-    abstract update(id: string, user: Users): Promise<Users>
-    abstract getByEmail(email:string)
-    abstract delete(id: string): Promise<void>
+    abstract getAll(): Promise<User[]>
+    abstract signup(signUpDto: SignupDto): Promise<User>
+    abstract login(loginDto: LoginDto): Promise<User>
+    abstract delete(deleteDto: DeleteDto): Promise<void>
+    abstract deleteAll(): Promise<void>
 }

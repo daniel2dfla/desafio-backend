@@ -20,7 +20,6 @@ export class ToolService {
      
     async findByWord( word: string): Promise<Tool[]> {
         const tools = await this.repository.getAll()
-        console.log(tools)
         const filteredTools = tools.filter(tool => 
             tool.id !== undefined &&
             tool.title !== undefined && 
