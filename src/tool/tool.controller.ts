@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, Req, UseGuards } from '@nestjs/common';
 import { ToolService } from './tool.service';
 import { Tool } from './tool';
 import { AuthGuard } from '@nestjs/passport';
@@ -13,10 +13,10 @@ export class ToolController {
     async getAll() : Promise<Tool[]>  {
         return this.toolService.getAll();
     }
-    
-    @Get('rota/:word')
+
+    @Get('rota')
     @UseGuards(AuthGuard())
-    async findByWord( @Param('word') word: string) : Promise<Tool[]>  {
+    async findByWord(@Query('word') word: string) : Promise<Tool[]>  {
         return this.toolService.findByWord(word);
     }
 
@@ -28,7 +28,7 @@ export class ToolController {
 
     @Post()
     @UseGuards(AuthGuard())
-    async create(@Body()  tool: Tool) : Promise<Tool>  {
+    async create( @Body()  tool: Tool) : Promise<Tool>  {
         return this.toolService.create(tool);
     }
     
@@ -45,6 +45,7 @@ export class ToolController {
     }
 
     @Delete()
+    @UseGuards(AuthGuard())
     async deleteAll() {
         return this.toolService.deleteAll();
     }

@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { IToolRepository } from '../class/itool-repository';
-import { ToolInMongo } from 'src/tool/tool';
+import { Tool, ToolInMongo } from 'src/tool/tool';
+// import { User } from '../schemas/user.schema';
 
 
 @Injectable()
@@ -11,29 +12,38 @@ export class MongoToolRepository implements IToolRepository {
     constructor(@InjectModel('Tool') private toolModel: Model<ToolInMongo>) {};
 
     async getAll() {
-        return this.toolModel.find().exec();
+        const findAll =  await this.toolModel.find().exec();
+        return findAll.map((tool) => {
+            return this.adaptTool(tool)
+        })
     }
 
-    async findByWord() {
-        return this.toolModel.find().exec();
+    async findByWord(word: string){
+        const findWord = this.toolModel.find({ $or: [
+            {title: { $regex: word, $options: 'i' }},
+            {link: { $regex: word, $options: 'i' }},
+            {description: { $regex: word, $options: 'i' }},
+            {tags: { $regex: word, $options: 'i' }}
+        ] }).exec();
+        
+        return (await findWord).map((tool) => {
+            return this.adaptTool(tool)
+        })
     }
    
-
     async getById(id: string) { 
-        return this.toolModel.findById(id).exec();
-    }
-
-    async getByEmail(email: string) { 
-        return this.toolModel.findOne({ email }).exec();
+        const findId = await this.toolModel.findById(id).exec();
+        return this.adaptTool(findId)
     }
     
     async create(tool: ToolInMongo) {
-        const newTool = new this.toolModel(tool);
-        return newTool.save();
+        const newTool = await new this.toolModel(tool).save();
+        return this.adaptTool(newTool);
     }
 
     async update(id: string, tool: ToolInMongo) {
-        return this.toolModel.findByIdAndUpdate({_id: id}, tool).exec();
+        const updateTool = await this.toolModel.findByIdAndUpdate({_id: id}, tool).exec();
+        return this.adaptTool(updateTool);
     }
 
     async delete(id: string) {
@@ -43,4 +53,14 @@ export class MongoToolRepository implements IToolRepository {
     async deleteAll() {
         await this.toolModel.deleteMany().exec();
     }
+
+    private adaptTool(idTool: ToolInMongo): Tool {
+        return {
+          id: idTool._id,
+          title: idTool.title,
+          link: idTool.link,
+          description: idTool.description,
+          tags: idTool.tags,
+        };
+      }
 }
