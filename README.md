@@ -72,7 +72,7 @@ o valor daquela tabela.
 - [x] Aplicar os conceitos SOLID como inversão de dependência e responsabilidade única.
 - [x] Criado a autenticação do projeto com JWT.
 - [ ] Criado os testes do projeto
-- [ ] Criar tratamento de erro.
+- [X] Criar tratamento de erro.
 
 ### Pré-requisitos e como rodar a aplicação
 - Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
